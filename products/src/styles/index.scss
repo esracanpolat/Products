@@ -1,0 +1,43 @@
+.Footer{
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .FooterContent{
+       display: flex;
+       justify-content: space-between;
+       padding: 20px;
+    }
+}
+.Categories{
+    height: 80vh;
+}
+.HomePage{
+    .HomePage-Button{
+        border-radius: 4px;
+        margin: 10px;
+        background-color: white;
+        width: 150px;
+    }
+
+}
+.ProductDetails
+{
+    height: 80vh;
+  .Card{
+    margin-top:20px;  
+    border: solid 1px #36353554;
+    display: inline-flex ;
+    height: 70vh; 
+    width: 80vw;
+}}
+.Card{
+    border: solid 1px #36353554;
+    height: 400px;
+    width: 250px;
+    .CardRight{
+        width: 30%; 
+        border-right: solid 1px #36353554;
+        height: 70vh; 
+    }
+}
