@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GetFavorites } from '../Redux/actions/action';
+import { GetCategories, GetCategoryType, GetFavorites } from '../Redux/actions/action';
 
 const FavoritesPage = () => {
     const favorites = useSelector((state) => state.products).Favorites;
+    const categoryType = useSelector((state) => state.products).CategoryType;
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(GetCategories())
+    }, []);
+
 
     return (
-        <div className='categories' >
+        <div className='favoritesPage' >
             <div className='d-flex align-items-center'>
                 <p style={{ marginLeft: 40, marginTop: 20 }}> Favorite</p>
             </div>
@@ -15,16 +22,17 @@ const FavoritesPage = () => {
                 <div className='row' >
                     {favorites && favorites.map((data) => (
                         <div className='col d-flex justify-content-center' style={{ marginTop: 20 }}>
-                            <div className='Card'>
-                                <div>
+                            <div className='Card '>
+                                <div className='d-flex justify-content-center'>
                                     <a href={`/product/${data.id}`}><img src={`http://localhost:3000${data.productImage}`} style={{ width: 240, height: 200 }} /></a>
                                 </div>
-                                <div>
+                                <div style={{ margin: 20 }}>
                                     <p>Ürün Adı: {data.name}</p>
-                                    <p>Kategori Adı:</p>
+                                    <p>Kategori Adı: {categoryType.filter(val => val.id == data.category)[0].name}</p>
                                 </div>
                             </div>
-                        </div>))}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

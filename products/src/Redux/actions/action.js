@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const { LOCALHOST_API } = process.env;
-
+console.log(process.env.LOCALHOST_API, "LOCALHOST_API");
 export const AddFavorites = (data) => {
     return {
         type: "ADD_FAVORITES",

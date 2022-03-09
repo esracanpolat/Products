@@ -18,10 +18,9 @@ const HomePage = () => {
         dispatch(GetCategories());
     }, []);
 
-    console.log(categoryType, "categoryType");
     return (
         <div className='HomePage'>
-            <div id="carouselExampleSlidesOnly" className="carousel slide" style={{ margin: 20 }} data-ride="carousel">
+            <div id="carouselExampleSlidesOnly" className="carousel slide" style={{ paddingLeft: 80, paddingRight: 80, paddingTop: 40 }} data-ride="carousel">
                 <div className="carousel-inner">
                     {img && img.map((data) =>
                     (<div key={data && data.productId} className={data.productId == 1 ? "carousel-item active" : "carousel-item"}>
@@ -34,11 +33,9 @@ const HomePage = () => {
                 <h1>KATEGORİLER</h1>
             </div>
             <div className='d-flex justify-content-center'>
-                <div>{categoryType && categoryType.map((data) => (
+                {categoryType && categoryType.map((data) => (
                     <button className='HomePage-Button' onClick={() => navigate(`/Categories/${data.id}/${data.name}`)}>{data.name}</button>
                 ))}
-                </div>
-
             </div>
 
         </div>

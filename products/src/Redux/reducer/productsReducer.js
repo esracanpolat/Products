@@ -15,16 +15,6 @@ export const productsReducer = (state = initialState, action) => {
                 ...state,
                 Favorites: [action.payload, ...state.Favorites]
             }
-        case "EDIT_TODO":
-            let index = state.Todo.findIndex(todo => todo.id === action.payload.id);
-            return {
-                ...state,
-                Todo: [
-                    ...state.Todo.slice(0, index),
-                    action.payload,
-                    ...state.Todo.slice(index + 1)
-                ]
-            }
         case "GET_SLIDER":
             return {
                 ...state,

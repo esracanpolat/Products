@@ -8,7 +8,9 @@ const Footer = () => {
                     <p>Katalog App © All rights reserved.</p>
                 </div>
                 <div>
-                    flöelrföreşlö
+                    <img src="..." />
+                    <img src="..." />
+                    <img src="..." />
                 </div>
             </div>
         </div>
