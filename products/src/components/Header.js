@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { GetFavorites } from '../Redux/actions/action'
+import { GetCategories, GetFavorites } from '../Redux/actions/action'
 
 export const Header = () => {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false)
 
     useEffect(() => {
-        dispatch(GetFavorites())
+        dispatch(GetFavorites());
+        dispatch(GetCategories());
+
     }, [])
+
     return (
         <div className='Header'>
             <div className='w-100 ' style={{ height: 93 }}>

@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { GetCategories, GetCategoryType, GetFavorites } from '../Redux/actions/action';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const FavoritesPage = () => {
     const favorites = useSelector((state) => state.products).Favorites;
     const categoryType = useSelector((state) => state.products).CategoryType;
-
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(GetCategories())
-    }, []);
-
-
     return (
         <div className='favoritesPage' >
             <div className='d-flex align-items-center'>
@@ -28,7 +20,7 @@ const FavoritesPage = () => {
                                 </div>
                                 <div style={{ margin: 20 }}>
                                     <p>Ürün Adı: {data.name}</p>
-                                    <p>Kategori Adı: {categoryType.filter(val => val.id == data.category)[0].name}</p>
+                                    <p>Kategori Adı: {categoryType && data.category && categoryType.filter(val => val.id == data.category)[0].name}</p>
                                 </div>
                             </div>
                         </div>
