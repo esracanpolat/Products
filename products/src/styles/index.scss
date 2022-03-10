@@ -34,10 +34,10 @@ $breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
     width: 80vw;
     .CardLeft{
         border-right: solid 1px #36353554;
-        height: 70vh; 
+        min-height: 70vh; 
     }
     .CardRight{
-       height: 70vh;
+       min-height: 70vh;
     }
     @media only screen and (max-width: 600px) {
         .CardLeft{
